@@ -10,8 +10,6 @@ RUN R -e 'install.packages("BiocManager")'
 RUN R -e 'install.packages("devtools")'
 RUN R -e 'install.packages("rmarkdown")'
 RUN R -e 'install.packages("tidyverse")'
-RUN R -e 'install.packages("yaml")'
-
 
 # install necessary packages for bbcRNA
 RUN R -e 'devtools::install_github("vari-bbc/bbcRNA")'
