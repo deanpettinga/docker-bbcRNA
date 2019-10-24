@@ -1,6 +1,6 @@
 FROM rocker/r-ver:3.6.0
 
-# changes CRAN mirror for package downloads (default is snapshotted MRAN) 
+# changes CRAN mirror for package downloads (default is snapshotted MRAN)
 # newest versions of packages are installed on top of the rocker/verse image
 # necessary for CRAN dependencies installed by Bioconductor and github packages.
 RUN echo "options(repos = c(CRAN = 'https://cran.rstudio.com/'), download.file.method = 'libcurl')" >> /usr/local/lib/R/etc/Rprofile.site
