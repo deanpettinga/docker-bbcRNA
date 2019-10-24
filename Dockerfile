@@ -6,9 +6,12 @@ FROM rocker/r-ver:3.6.0
 RUN echo "options(repos = c(CRAN = 'https://cran.rstudio.com/'), download.file.method = 'libcurl')" >> /usr/local/lib/R/etc/Rprofile.site
 
 # CRAN packages
+RUN R -e 'install.packages("BiocManager")'
+RUN R -e 'install.packages("devtools")'
+RUN R -e 'install.packages("rmarkdown")'
 RUN R -e 'install.packages("tidyverse")'
-RUN R -c 'install.packages("devtools")'
-RUN R -c 'install.packages("rmarkdown")'
+RUN R -e 'install.packages("yaml")'
+
 
 # install necessary packages for bbcRNA
 RUN R -e 'devtools::install_github("vari-bbc/bbcRNA")'
