@@ -1,4 +1,4 @@
-FROM rocker/r-base:latest
+FROM rocker/r-ver:latest
 
 # changes CRAN mirror for package downloads (default is snapshotted MRAN)
 # newest versions of packages are installed on top of the rocker/verse image
