@@ -1,4 +1,4 @@
-FROM rocker/r-ver:3.6.0
+FROM rocker/r-verse:3.6.0
 
 # changes CRAN mirror for package downloads (default is snapshotted MRAN)
 # newest versions of packages are installed on top of the rocker/verse image
@@ -6,10 +6,11 @@ FROM rocker/r-ver:3.6.0
 RUN echo "options(repos = c(CRAN = 'https://cran.rstudio.com/'), download.file.method = 'libcurl')" >> /usr/local/lib/R/etc/Rprofile.site
 
 # CRAN packages
-RUN R -e 'install.packages("BiocManager")'
-RUN R -e 'install.packages("devtools")'
 RUN R -e 'install.packages("rmarkdown")'
 RUN R -e 'install.packages("tidyverse")'
+RUN R -e 'install.packages("kableExtra")'
+RUN R -e 'install.packages("devtools")'
+RUN R -e 'install.packages("BiocManager")'
 
 # install necessary packages for bbcRNA
 RUN R -e 'devtools::install_github("vari-bbc/bbcRNA")'
